@@ -8,6 +8,9 @@ const itemsFromBackend = [
   { id: "item3", content: "Third task" },
   { id: "item4", content: "Fourth task" },
   { id: "item5", content: "Fifth task" },
+  { id: "item6", content: "Sixth task" },
+  { id: "item7", content: "Seventh task" },
+  { id: "item8", content: "Eigth task" },
 ];
 
 const columnsFromBackend = {
@@ -93,10 +96,11 @@ function App() {
                       <div
                         {...provided.droppableProps}
                         ref={provided.innerRef}
+                        {...(snapshot.isDraggingOver && {
+                          className: "landing-col",
+                        })}
                         style={{
-                          background: snapshot.isDraggingOver
-                            ? "lightblue"
-                            : "lightgrey",
+                          background: "lightblue",
                           padding: 4,
                           width: 250,
                           minHeight: 500,
